@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suite">
-	<parameter name="JenkinsServerURL" value="http://192.168.1.206:8080/" />
-	<parameter name="UserName" value="Sagar123" />
-	<parameter name="Password" value="321587f92fac4aad3132ca7c1da5f1f9" />
-	<parameter name="JobName" value="ST_Empower_Selenium_Pipeline" />
+	<parameter name="JenkinsServerURL" value="" />
+	<parameter name="UserName" value="" />
+	<parameter name="Password" value="" />
+	<parameter name="JobName" value="" />
   <test thread-count="5" name="Test">
     <classes>
       <class name="org.st.jenkins.ST_JenkinsUtil"/>
