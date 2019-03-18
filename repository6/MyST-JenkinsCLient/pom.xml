@@ -1,0 +1,61 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.st</groupId>
+	<artifactId>ST_JenkinsClient</artifactId>
+	<version>0.1</version>
+	<packaging>jar</packaging>
+	<properties>		   
+		<st-testNgVersion>6.8.21</st-testNgVersion>  
+		<st-javaVersion>1.8</st-javaVersion>
+		<st-mavenCompilerPluginVersion>3.1</st-mavenCompilerPluginVersion>
+		<st-mavenDeployPluginVersion>2.8.1</st-mavenDeployPluginVersion>		
+		<st-mavenSurefilePluginVersion>2.12.4</st-mavenSurefilePluginVersion>
+		<st-mavenSurefileReportPluginVersion>2.12.4</st-mavenSurefileReportPluginVersion>
+	</properties>
+	<repositories>
+		<repository>
+			<id>maven</id>
+			<url>http://repo.maven.apache.org/maven2/</url>
+		</repository>
+	</repositories>	
+	<dependencies>	
+	<dependency>
+		<groupId>org.testng</groupId>
+		<artifactId>testng</artifactId>
+		<version>${st-testNgVersion}</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/com.offbytwo.jenkins/jenkins-client -->
+	<dependency>
+	  <groupId>com.offbytwo.jenkins</groupId>
+	  <artifactId>jenkins-client</artifactId>
+	  <version>0.3.8</version>
+	</dependency>
+	</dependencies>
+	<build>
+		<pluginManagement>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.3.1</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+					<executable>C:\Program Files\Java\jdk1.8.0_171\bin</executable>													
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.19.1</version>
+					<configuration>
+						<suiteXmlFiles>
+							<suiteXmlFile>testng.xml</suiteXmlFile>
+						</suiteXmlFiles>
+					</configuration>
+			</plugin>
+		</plugins>
+		</pluginManagement>
+	</build>
+</project>

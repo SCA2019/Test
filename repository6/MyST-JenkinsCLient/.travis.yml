@@ -1,0 +1,24 @@
+language: java
+install: mvn install -DskipTests=true
+script: mvn test -DjenkinsOperatingSystem=linux -DjenkinsBrowser=html -DjenkinsRunLocation=sauce -Denvironment=null -DjenkinsBrowserVersion=null -DsuiteXmlFile=src/test/resources/localRegression.xml 
+jdk:
+  - oraclejdk8
+  
+addons:
+  apt:
+    packages:
+      - oracle-java8-installer
+      
+after_script:
+  - cat target/surefire-reports/TestSuite.txt
+  # blacklist
+branches:
+  except:
+    - legacy
+    - experimental
+
+# whitelist
+branches:
+  only:
+    - master
+    - stage
